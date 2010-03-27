@@ -1,6 +1,6 @@
 = next-big-sound
 
-Description goes here.
+This is the start of a ruby api wrapper for nextbigsound.com.  This gem will provide a reasonable ruby wrapper for all methods in the public API.
 
 == Note on Patches/Pull Requests
  
