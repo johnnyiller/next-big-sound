@@ -37,9 +37,9 @@ This code was written by jeff at musicxray.com if you think you can do better se
 	# in addition.  There is are magic method for retrieving data
 	# if you want myspace plays for example you would get it like this
 	
-	artist = 	searchobj.artists.first
+	artist = searchobj.artists.first
 
-  # this will fetch you a month worth of myspace plays data	
+	# this will fetch you a month worth of myspace plays data	
 	artist.myspace_plays("1/1/2010","2/1/2010")
 	
 	# this will find all fans for a particular artist across all
