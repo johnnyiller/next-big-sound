@@ -32,12 +32,9 @@ module NBS
     
     def method_missing(method_name,*args)
       if splits = method_name.to_s.split("_")
-        puts args.inspect
         sdate = Date.parse(args[0].to_s)
         edate = Date.parse(args[1].to_s)
         opts = options.merge({"service"=>splits[0],"metric"=>splits[1],"start"=>sdate.to_s,"end"=>edate.to_s})
-        puts opts.inspect
-        puts "http://api.nextbigsound.com/v1_1/getDataForArtist?#{opts.to_url_params}"
         return Net::HTTP.get(URI.parse("#{NBS::NBS_CONFIG["base_url"]}getDataForArtist?#{opts.to_url_params}")).to_s
       else
         raise "Sorry that method does not exist. The proper format for finding data is service_metric(start,end)"
