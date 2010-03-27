@@ -4,29 +4,35 @@ This is the start of a ruby api wrapper for nextbigsound.com.  This gem will pro
 
 This code was written by jeff at musicxray.com if you think you can do better send us and email and we can chat about job opportunities.
 
+<b>installation:</b>
+	
+	gem install xml-simple
+	
+	gem install next-big-sound
+
 <b>usage:</b>
 		
-		require 'rubygems'
-		require 'next-big-sound'
+	require 'rubygems'
+	require 'next-big-sound'
 		
-		nbs = NBS::Base.new('YOUR_API_KEY')
+	nbs = NBS::Base.new('YOUR_API_KEY')
 		
-		searchobj = nbs.search("The Killers")
+	searchobj = nbs.search("The Killers")
 		
-		# retrieve list of artists that returned from the search
-		searchobj.artists
+	# retrieve list of artists that returned from the search
+	searchobj.artists
 		
-		# get the id of the artist
-		searchobj.artists.first.artist_id  # can be useful to store for later use.
+	# get the id of the artist
+	searchobj.artists.first.artist_id  # can be useful to store for later use.
 		
-		# get the first artist that you find and find
-		# all associated profiles.   myspace, ilike ....
+	# get the first artist that you find and find
+	# all associated profiles.   myspace, ilike ....
+	
+	profiles = searchobj.artists.first.profiles 
 		
-		profiles = searchobj.artists.first.profiles 
+	# get the url for a specific service
 		
-		# get the url for a specific service
-		
-		profiles["MYSPACE"]
+	profiles["MYSPACE"]
 		
 
 
