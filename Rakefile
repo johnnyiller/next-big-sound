@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "next-big-sound"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Next Big Sound}
+    gem.description = %Q{A simple wrapper class for the Next Big Sound api.  docs for the api can be found at api.nextbigsound.com}
     gem.email = "jeff.durand@gmail.com"
     gem.homepage = "http://github.com/johnnyiller/next-big-sound"
     gem.authors = ["jeff durand"]
