@@ -4,7 +4,7 @@ This is the start of a ruby api wrapper for nextbigsound.com.  This gem will pro
 
 This code was written by jeff at musicxray.com if you think you can do better send us and email and we can chat about job opportunities.
 
-_usage:_
+<b>usage:</b>
 		
 		require 'rubygems'
 		require 'next-big-sound'
