@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{next-big-sound}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["jeff durand"]
@@ -25,8 +25,8 @@ Gem::Specification.new do |s|
      "VERSION",
      "config.yml",
      "lib/artist.rb",
-     "lib/base.rb",
      "lib/hash_extension.rb",
+     "lib/next-big-sound.rb",
      "lib/search.rb",
      "next-big-sound.gemspec",
      "test/helper.rb",
