@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["jeff durand"]
   s.date = %q{2010-03-26}
-  s.description = %q{TODO: longer description of your gem}
+  s.description = %q{A simple wrapper class for the Next Big Sound api.  docs for the api can be found at api.nextbigsound.com}
   s.email = %q{jeff.durand@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -27,6 +27,7 @@ Gem::Specification.new do |s|
      "lib/base.rb",
      "lib/hash_extension.rb",
      "lib/search.rb",
+     "next-big-sound.gemspec",
      "test/helper.rb",
      "test/test_search.rb"
   ]
@@ -34,7 +35,7 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.5}
-  s.summary = %q{TODO: one-line summary of your gem}
+  s.summary = %q{Next Big Sound}
   s.test_files = [
     "test/helper.rb",
      "test/test_search.rb"
