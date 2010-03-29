@@ -11,7 +11,7 @@ module NBS
   require 'metric'
   require 'datapoint'
   
-
+  puts "#{File.dirname(__FILE__)}/config.yml"
   NBS_CONFIG = YAML.load_file("#{File.dirname(__FILE__)}/config.yml")
   
   class Base
