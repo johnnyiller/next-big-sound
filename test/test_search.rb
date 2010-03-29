@@ -22,8 +22,8 @@ class TestNextBigSound < Test::Unit::TestCase
   	  should "have first result with artist name of The Killers" do 
 	      assert_equal "The Killers", @searchobj.artists.first.name
 	    end
-	    should "be able to get some data" do
-	      assert @searchobj.artists.first.myspace_plays("4/24/2009","4/24/2010").is_a?(Array)
+	    should "metrics for profile" do
+	      assert @searchobj.artists.first.profiles.first.is_a?(Profile)
       end
 	  end
     #should "have many re"

@@ -28,28 +28,36 @@ This code was written by jeff at musicxray.com if you think you can do better se
 	# get the first artist that you find and find
 	# all associated profiles.   myspace, ilike ....
 	
-	profiles = searchobj.artists.first.profiles 
-		
+	artist = searchobj.artists.first
+	
+	artist.profiles 
 	# get the url for a specific service
 		
-	profiles["MYSPACE"]
-		
+	artist.profiles["MYSPACE"]	
 	# in addition.  There is are magic method for retrieving data
 	# if you want myspace plays for example you would get it like this
 	
-	artist = searchobj.artists.first
+	# Each profile can have multiple metrics 
+	# each metric has an array of datapoints.  
+	# datapoints consist of a DateTime Object and a float
+	# example usage follows
+	
+	profile = artist.profiles["MYSPACE"]
+	
+	metrics = profile.metrics("4/24/2009","4/24/2010")
+	datapoints = metrics["plays"].data_points
+	
+	#The datapoints array can then be iterated over.
+	
+	#shortcut methods have been provided for convenience is as follows
+	
+	artist.myspace_plays_datapoints("4/24/2009","4/24/2010")
+	
+	This will return the datapoints you are looking for .... 
+	
 
-	# this will fetch you a month worth of myspace plays data	
-	artist.myspace_plays("1/1/2010","2/1/2010")
+
 	
-	# this will find all fans for a particular artist across all
-	# services.
-	artist.all_fans("1/1/2010","2/1/2010")
-	
-	# The data points are returned as an array of datasets
-	# One dataset per profile Datasets can be sorted by date 
-	
-	#  TODO: this stuff is still be implemented.
 
 
 == Note on Patches/Pull Requests

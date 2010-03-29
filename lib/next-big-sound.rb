@@ -5,6 +5,10 @@ module NBS
   require 'hash_extension'
   require 'search'
   require 'artist'
+  require 'artist_profile'
+  require 'metric'
+  require 'datapoint'
+  
 
   NBS_CONFIG = YAML.load_file("config.yml")
   
