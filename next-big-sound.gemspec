@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{next-big-sound}
-  s.version = "0.3.0"
+  s.version = "0.3.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["jeff durand"]
@@ -23,9 +23,9 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
-     "config.yml",
      "lib/artist.rb",
      "lib/artist_profile.rb",
+     "lib/config.yml",
      "lib/datapoint.rb",
      "lib/hash_extension.rb",
      "lib/metric.rb",
