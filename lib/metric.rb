@@ -27,6 +27,9 @@ module NBS
         return []
       end
     end
+    #def xml_data_points
+      #to_hash["Profiles"][0]["Profile"][0]["DataPoint"].to_xml
+    #end
     def to_xml
       self.xml ||= fetch
     end

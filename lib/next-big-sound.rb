@@ -10,7 +10,7 @@ module NBS
   require 'datapoint'
   
 
-  NBS_CONFIG = YAML.load_file("config.yml")
+  NBS_CONFIG = YAML.load_file("./config.yml")
   
   class Base
      
