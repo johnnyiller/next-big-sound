@@ -23,7 +23,7 @@ class TestNextBigSound < Test::Unit::TestCase
 	      assert_equal "The Killers", @searchobj.artists.first.name
 	    end
 	    should "metrics for profile" do
-	      assert @searchobj.artists.first.profiles.first.is_a?(Profile)
+	      assert @searchobj.artists.first.profiles["MYSPACE"].is_a?(ArtistProfile)
       end
 	  end
     #should "have many re"
