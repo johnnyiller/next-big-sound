@@ -1,6 +1,9 @@
 module NBS
   
-  $LOAD_PATH << './lib'
+  #$LOAD_PATH << './lib'
+  $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
+  $LOAD_PATH.unshift(File.dirname(__FILE__))
+  
   require 'yaml'
   require 'hash_extension'
   require 'search'
@@ -10,7 +13,7 @@ module NBS
   require 'datapoint'
   
 
-  NBS_CONFIG = YAML.load_file("config.yml")
+  NBS_CONFIG = YAML.load_file("./lib/config.yml")
   
   class Base
      
