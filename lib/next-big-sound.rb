@@ -17,15 +17,17 @@ module NBS
   #puts "#{File.dirname(__FILE__)}/config.yml"
   NBS_CONFIG = YAML.load_file("#{File.dirname(__FILE__)}/config.yml")
   
-  CACHE_ENABLED = false
+  #CACHE_ENABLED
   #KEYSTORE = nil
   
   
   class Base
+    
     extend NBS::MemcachedMemoize
+    
     def initialize(api_key)
       $nbs_api_key = api_key
-      
+      #puts CACHE_ENABLED
     end
     # return a search object that you can manipulate
     # if you prefer to just use the xml simply type to_xml

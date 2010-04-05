@@ -1,8 +1,5 @@
 module NBS
   class Artist
-  
-    #extend NBS::MemcachedMemoize
-    
     
     attr_accessor :artist_id, :name, :xml, :options
       
@@ -40,6 +37,6 @@ module NBS
       metrics = prof.metrics(args[0],args[1])
       return metrics[splits[1].downcase.to_s].data_points
     end
-    #remember :fetch_profiles
+
   end
 end

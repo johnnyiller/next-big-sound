@@ -1,11 +1,12 @@
 require 'memcache'
 module NBS  
   module MemcachedMemoize
-    #KEYSTORE 
     def remember(name)
-     #puts name
+     
      original_method = instance_method(name)
      define_method(name) do |*args|
+      
+      if defined?(KEYSTORE)
        key = args.collect {|c| c.to_s }.join("_").gsub(" ","_")
        key+=name.to_s
        puts key
@@ -19,6 +20,10 @@ module NBS
          KEYSTORE.set(key,Marshal.dump(bound_method.call(*args)))
          return Marshal.restore(KEYSTORE.get(key))
        end
+     else
+       bound_method = original_method.bind(self)
+       bound_method.call(*args)
+     end
      end
     end   
   end

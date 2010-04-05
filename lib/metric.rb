@@ -42,6 +42,6 @@ module NBS
     def to_hash
       Hash.from_xml(to_xml)
     end
-    remember :fetch
+    remember :fetch 
   end
 end
