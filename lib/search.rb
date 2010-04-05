@@ -4,7 +4,10 @@ module NBS
   require 'uri'
   
   class Search
-  
+    
+    #extend NBS::MemcachedMemoize
+    
+    
     attr_accessor :options, :query, :api_key,:base_url, :xml
       
     def initialize(query, options={})
@@ -27,5 +30,7 @@ module NBS
     def to_xml
       self.xml ||=fetch
     end
+    
+    #remember :fetch
   end
 end
