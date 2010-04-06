@@ -1,4 +1,5 @@
 require 'memcache'
+require 'digest/md5'
 module NBS  
   module MemcachedMemoize
     def remember(name)
@@ -9,6 +10,7 @@ module NBS
       if defined?(KEYSTORE)
        key = args.collect {|c| c.to_s }.join("_").gsub(" ","_")
        key+=name.to_s
+       key = Digest::MD5.hexdigest(key)
        puts key
        if KEYSTORE.get(key)!=nil
          puts "it was memorized" 
