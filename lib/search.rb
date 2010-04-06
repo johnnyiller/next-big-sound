@@ -22,8 +22,11 @@ module NBS
     def artists
       hash = Hash.from_xml(self.to_xml)
       a = []
-      hash["Results"][0]["Result"].each do |item|
-       a << Artist.new(item["NBSArtistID"][0],item["NBSArtistName"][0])
+      begin
+        hash["Results"][0]["Result"].each do |item|
+          a << Artist.new(item["NBSArtistID"][0],item["NBSArtistName"][0])
+        end
+      rescue
       end
       return a
     end
