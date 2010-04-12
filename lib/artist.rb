@@ -25,8 +25,8 @@ module NBS
           profs[item["service"].to_s]=ArtistProfile.new(self.artist_id, item["service"] ,item["url"])
         end
       rescue
-        return profs
       end
+      return profs
     end
     def to_xml
       self.xml ||= fetch_profiles
