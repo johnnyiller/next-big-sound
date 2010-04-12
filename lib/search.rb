@@ -17,7 +17,9 @@ module NBS
       self.base_url = base_url
     end
     def fetch
+      puts "#{NBS::NBS_CONFIG["base_url"]}search?#{self.options.to_url_params}"
       self.xml=Net::HTTP.get(URI.parse("#{NBS::NBS_CONFIG["base_url"]}search?#{self.options.to_url_params}")).to_s
+      #puts self.xml
     end
     def artists
       hash = Hash.from_xml(self.to_xml)

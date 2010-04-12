@@ -18,11 +18,15 @@ module NBS
     # return a hash of urls keyed by the service.
     def profiles
       ####
+      puts self.to_xml
       profs = {}
-      self.to_hash["Profiles"][0]["Profile"].each do |item|
-        profs[item["service"].to_s]=ArtistProfile.new(self.artist_id, item["service"] ,item["url"])
+      begin
+        self.to_hash["Profiles"][0]["Profile"].each do |item|
+          profs[item["service"].to_s]=ArtistProfile.new(self.artist_id, item["service"] ,item["url"])
+        end
+      rescue
+        return profs
       end
-      return profs
     end
     def to_xml
       self.xml ||= fetch_profiles
