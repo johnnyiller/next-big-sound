@@ -1,10 +1,7 @@
-
-
 require 'rubygems'
 require "cgi"
 require 'xmlsimple'
 require 'rubygems'
-require 'memoize'
 require 'yaml'
 
 class Hash
@@ -21,11 +18,12 @@ class Hash
   end 
 end
 
+directory = File.expand_path(File.dirname(__FILE__))
+require File.join(directory,"next-big-sound", "memoize")
+require File.join(directory,"next-big-sound", "base")
+require File.join(directory,"next-big-sound", "search")
+require File.join(directory,"next-big-sound","artist")
+require File.join(directory,"next-big-sound","artist_profile")
+require File.join(directory,"next-big-sound", "metric")
+require File.join(directory,"next-big-sound","datapoint")
 
-
-
-require 'search'
-require 'artist'
-require 'artist_profile'
-require 'metric'
-require 'datapoint'
