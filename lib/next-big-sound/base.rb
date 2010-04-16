@@ -1,6 +1,6 @@
 module NBS
   
-  NBS_CONFIG = YAML.load_file("#{File.dirname(__FILE__)}/config.yml")
+  NBS_CONFIG = YAML.load_file("#{File.dirname(__FILE__)}/../config.yml")
 
   class Base
     
