@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{next-big-sound}
-  s.version = "0.5.0"
+  s.version = "0.6.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["jeff durand"]
@@ -23,15 +23,15 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
-     "lib/artist.rb",
-     "lib/artist_profile.rb",
      "lib/config.yml",
-     "lib/datapoint.rb",
-     "lib/hash_extension.rb",
-     "lib/memoize.rb",
-     "lib/metric.rb",
      "lib/next-big-sound.rb",
-     "lib/search.rb",
+     "lib/next-big-sound/artist.rb",
+     "lib/next-big-sound/artist_profile.rb",
+     "lib/next-big-sound/base.rb",
+     "lib/next-big-sound/datapoint.rb",
+     "lib/next-big-sound/memoize.rb",
+     "lib/next-big-sound/metric.rb",
+     "lib/next-big-sound/search.rb",
      "next-big-sound.gemspec",
      "test/helper.rb",
      "test/test_search.rb"
