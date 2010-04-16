@@ -4,10 +4,7 @@ module NBS
   require 'uri'
   
   class Search
-    
-    #extend NBS::MemcachedMemoize
-    
-    
+        
     attr_accessor :options, :query, :api_key,:base_url, :xml
       
     def initialize(query, options={})
@@ -26,7 +23,7 @@ module NBS
       a = []
       begin
         hash["Results"][0]["Result"].each do |item|
-          a << Artist.new(item["NBSArtistID"][0],item["NBSArtistName"][0])
+          a << NBS::Artist.new(item["NBSArtistID"][0],item["NBSArtistName"][0])
         end
       rescue
       end
@@ -35,7 +32,5 @@ module NBS
     def to_xml
       self.xml ||=fetch
     end
-    
-    #remember :fetch
   end
 end

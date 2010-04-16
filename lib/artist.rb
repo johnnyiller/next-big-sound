@@ -22,7 +22,7 @@ module NBS
       profs = {}
       begin
         self.to_hash["Profiles"][0]["Profile"].each do |item|
-          profs[item["service"].to_s]=ArtistProfile.new(self.artist_id, item["service"] ,item["url"])
+          profs[item["service"].to_s]=NBS::ArtistProfile.new(self.artist_id, item["service"] ,item["url"])
         end
       rescue
       end

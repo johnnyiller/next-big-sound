@@ -23,7 +23,7 @@ module NBS
         points = to_hash["Profiles"][0]["Profile"][0]["DataPoint"]
         dps = []
         points.each do |dp|
-          dps << DataPoint.new(dp["date"],dp["value"])
+          dps << NBS::DataPoint.new(dp["date"],dp["value"])
         end
         return dps
       rescue
