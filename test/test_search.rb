@@ -14,7 +14,7 @@ class TestNextBigSound < Test::Unit::TestCase
          @searchobj = @nbs.search("The Killers")
       end
 	    should "Be able to find The Killers ArtistID" do
-        assert_match /<NBSArtistID>\d+<\/NBSArtistID>/i, @searchobj.to_xml
+        assert_match /<artist id=\"\d+\">/i, @searchobj.to_xml
     	end
     	should "have an array of results" do 
   	    assert !@searchobj.artists.empty?

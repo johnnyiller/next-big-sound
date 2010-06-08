@@ -18,6 +18,9 @@ module NBS
       search.fetch
       return search
     end
+    def self.t_to_d(string_timestamp)
+      return Date.parse(Time.at(string_timestamp.to_i).to_s)
+    end
     remember :search
   end
 end

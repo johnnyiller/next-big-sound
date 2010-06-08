@@ -19,6 +19,9 @@ module NBS
       statsxml = Net::HTTP.get(URI.parse("#{NBS::NBS_CONFIG["base_url"]}getDataForArtist?#{options.to_url_params}")).to_s
     end
     def data_points
+      unless @data_points.empty?
+        return @data_points
+      end
       begin
         points = to_hash["Profiles"][0]["Profile"][0]["DataPoint"]
         dps = []
@@ -29,6 +32,10 @@ module NBS
       rescue
         return []
       end
+    end
+    # this will allow me to load the data that I previously fetched.
+    def load_datapoints(data_points)
+      @data_points = data_points
     end
     # delivers the datapoints as a Date keyed hash.
     #def date_points_hash
