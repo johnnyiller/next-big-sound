@@ -35,7 +35,11 @@ module NBS
       ####
       #puts self.to_xml
       #puts self.to_xml
-      profs = {}
+      @profs ||= long_function
+      
+    end
+    def long_function
+      profs={}
       begin
         startd = NBS::Base.t_to_d(self.to_hash["data"][0]["criteria"][0]["start"][0]["content"])
         endd = NBS::Base.t_to_d(self.to_hash["data"][0]["criteria"][0]["end"][0]["content"])
