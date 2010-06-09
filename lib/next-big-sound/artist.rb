@@ -36,7 +36,7 @@ module NBS
       #puts self.to_xml
       #puts self.to_xml
       @profs ||= long_function
-      
+      return @profs
     end
     def long_function
       profs={}
@@ -78,13 +78,30 @@ module NBS
     def to_hash
       Hash.from_xml(self.to_xml)
     end
+    def youtube_videos
+      @youtube_fetch ||= Net::HTTP.get(URI.parse("#{$nbs_api_key}youtube/artist/#{self.artist_id}.xml")).to_s
+      h = Hash.from_xml(@youtube_fetch)
     
-    #def method_missing(method_name,*args)
-    #  splits = method_name.to_s.split("_")
-    #  prof = self.profiles[splits[0].upcase]
-    #  metrics = prof.metrics(args[0],args[1])
-    #  return metrics[splits[1].downcase.to_s].data_points
-    #end
-
+      arr =[]
+      begin 
+        h["data"][0]["youtubes"][0]["youtube"].each do |g|
+          arr << g["url"].to_s
+       end
+      rescue 
+      end
+      return arr
+    end
+    def genres
+      @genre_fetch ||= Net::HTTP.get(URI.parse("#{$nbs_api_key}genres/artist/#{self.artist_id}.xml")).to_s
+      h = Hash.from_xml(@genre_fetch)
+      arr =[]
+      begin
+      h["data"][0]["genres"][0]["genre"].each do |g|
+        arr << g["name"].to_s
+      end
+      rescue
+      end
+      return arr
+    end
   end
 end
