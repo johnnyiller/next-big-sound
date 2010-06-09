@@ -1,6 +1,6 @@
 module NBS
   class Artist
-    
+    extend NBS::MemcachedMemoize
     attr_accessor :artist_id, :name, :xml, :options, :post_params
       
     PROFILES = %w(all myspace lastfm ilike facebook twitter youtube reverbnation ourstage soundcloud purevolume bebo virb amiestreet jamlegend vimeo)
@@ -17,7 +17,7 @@ module NBS
       end
     end
     
-    def fetch_profiles
+    def fetch_profiles(artist,sdate,edate)
       if self.post_params.empty?
         puts "not doing expected action"
         puts self.post_params
@@ -73,7 +73,7 @@ module NBS
       return profs
     end
     def to_xml
-      self.xml ||= fetch_profiles
+      self.xml ||= fetch_profiles(self.artist_id,self.options["start_date"], self.options["end_date"])
     end
     def to_hash
       Hash.from_xml(self.to_xml)
@@ -103,5 +103,6 @@ module NBS
       end
       return arr
     end
+    remember :fetch_profiles
   end
 end
